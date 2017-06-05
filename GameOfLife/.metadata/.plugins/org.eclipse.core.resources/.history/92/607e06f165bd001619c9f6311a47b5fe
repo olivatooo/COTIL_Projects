@@ -1,0 +1,153 @@
+import java.awt.Color;
+import java.util.Random;
+
+
+public class Organism {
+	String name;
+	int lifeTime;
+	int time;
+	int adultLife;
+	char identifier;
+	int mutation_prob;
+	int reproduction;
+	int death_conditions;
+	Color org_color;
+	Color actual_color;
+	int population;
+	int spread;
+	
+	public Organism(String name, int lifeTime,  int adultLife,
+			char identifier, int mutation_prob, int reproduction, int spread,
+			int death_conditions, Color org_color) {
+		super();
+		this.name = name;
+		this.lifeTime = lifeTime;
+		this.adultLife = adultLife;
+		this.identifier = identifier;
+		this.mutation_prob = mutation_prob;
+		this.reproduction = reproduction;
+		this.spread = spread;
+		this.death_conditions = death_conditions;
+		this.org_color = org_color;
+		
+		
+	}
+	
+	
+	public int getLifeTime() {
+		return lifeTime;
+	}
+
+
+	public void setLifeTime(int lifeTime) {
+		this.lifeTime = lifeTime;
+	}
+
+
+	public int getTime() {
+		return time;
+	}
+
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+
+	public int getAdultLife() {
+		return adultLife;
+	}
+
+
+	public void setAdultLife(int adultLife) {
+		this.adultLife = adultLife;
+	}
+
+
+	public int getPopulation() {
+		return population;
+	}
+
+
+	public void setPopulation(int population) {
+		this.population = population;
+	}
+
+
+	public boolean setOlder()
+	{
+		Random r = new Random();
+		int reduxR = (org_color.getRed()/lifeTime);
+		int reduxG = (org_color.getGreen()/lifeTime);
+		int reduxB = (org_color.getBlue()/lifeTime);
+		
+		this.time++;
+		if(this.org_color.getRed()>0){
+			
+			this.org_color = new Color(this.org_color.getRed()-reduxR,this.org_color.getGreen()-reduxG,this.org_color.getBlue()-reduxB);
+		    //do whatever you have to do with your fading color
+		}
+		if(this.time>this.lifeTime)
+		{
+			return true;
+		}
+		return false;
+	}
+	@Override
+	public String toString() {
+		return "Organism [name=" + name + ", identifier=" + identifier
+				+ ", mutation_prob=" + mutation_prob + ", reproduction="
+				+ reproduction + ", spread=" + spread + ", death_conditions="
+				+ death_conditions + ", org_color=" + org_color + "]";
+	}
+	public char getIdentifier() {
+		return identifier;
+	}
+	public void setIdentifier(char identifier) {
+		this.identifier = identifier;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getReproduction() {
+		return reproduction;
+	}
+	public void setReproduction(int reproduction) {
+		this.reproduction = reproduction;
+	}
+	public int getMutation_prob() {
+		return mutation_prob;
+	}
+	public void setMutation_prob(int mutation_prob) {
+		this.mutation_prob = mutation_prob;
+	}
+	public int getReprodution() {
+		return reproduction;
+	}
+	public void setReprodution(int reproduction) {
+		this.reproduction = reproduction;
+	}
+	public int getSpread() {
+		return spread;
+	}
+	public void setSpread(int spread) {
+		this.spread = spread;
+	}
+	public int getDeath_conditions() {
+		return death_conditions;
+	}
+	public void setDeath_conditions(int death_conditions) {
+		this.death_conditions = death_conditions;
+	}
+	public Color getOrg_color() {
+		return org_color;
+	}
+	public void setOrg_color(Color org_color) {
+		this.org_color = org_color;
+	}
+	
+	
+}

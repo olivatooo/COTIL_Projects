@@ -1,0 +1,10 @@
+
+
+public class UseGameOfLife {
+	static GameOfLife a;
+	public static void main(String args[])
+	{
+		new GameOfLife();
+	}
+	
+}

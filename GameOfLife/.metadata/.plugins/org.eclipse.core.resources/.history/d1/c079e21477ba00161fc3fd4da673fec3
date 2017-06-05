@@ -1,0 +1,4 @@
+
+public class Cell{
+	Organisms[][] a = new Organisms[1][1];
+}
